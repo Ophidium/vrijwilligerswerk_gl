@@ -1,6 +1,10 @@
 # vrijwilligerswerk
 Bedrijfsnaam: 99
-Talen: PHP(OOP), HTML/CSS en Javascript
+Talen:
+- MYSQLI(Database)
+- PHP(back-end)
+- Javascript(back-end/front-end)
+- HTML/CSS(front-end)
 
 Regels PHP code:
 - var in Class beginnen met _ (bijv. $_var)
