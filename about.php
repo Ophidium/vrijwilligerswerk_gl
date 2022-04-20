@@ -1,4 +1,7 @@
 <?php
+// Page title
+$title = "Over ons";
+
 // Including navbar
 include 'components/navbar.php'; 
 include 'components/header.php';

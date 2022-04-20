@@ -1,8 +1,16 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Button */
+/* button {
+
+} */
+
+
+
 
 /* Navbar logo */
 #navbarLogo {
@@ -72,7 +80,10 @@ li {
     justify-content: center;
     align-items: center;
     height: 500px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("header.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/volunteerImg.jpg");
+    background-position: center;
+    background-size: cover;
+    color: white;
 }
 
 /* Searchbar */
@@ -92,6 +103,7 @@ input[type=text], input[type=email], textarea {
     width: 200%;
     padding: 5px;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 textarea {
@@ -101,7 +113,8 @@ textarea {
 
 /* Footer */
 .footerContainer {
-    margin-top: 50px;
+    margin-top: 100px;
+    margin-bottom: 50px;
   display: flex;
   justify-content: space-around;
   align-items: baseline;

@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="../assets/style.css">
-</head>
-<body>
     <div class="footerContainer">
         <div class="footerContact">
             <h3>Contact</h3>
@@ -38,5 +32,3 @@
             <a href="">Cookieverklaring</a>
         </div>
     </div>
-</body>
-</html>
