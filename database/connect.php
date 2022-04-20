@@ -7,8 +7,7 @@ class Database
 	private		$userName = "root";
 	private		$passWord = "";
 	public		$connection;
-
-
+	
 	public function __construct(){
 		$this->getConnection();
 	}

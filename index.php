@@ -1,6 +1,6 @@
 <?php
 
-include 'components/navbar.php';
+include 'assets/components/navbar.php';
 
 
 ?>

@@ -1,9 +1,6 @@
 <?php
-
-
-
+define("BASEURL","http://localhost/programming/vrijwilligerswerk/");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="<?php echo BASEURL?>assets/style.css">
 </head>
 <body>
     <nav>
