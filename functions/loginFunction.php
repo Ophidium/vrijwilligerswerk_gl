@@ -2,15 +2,12 @@
 include '../database/connect.php';
 class registerClass
 {
-
-
-    public $_email;
+    private $_email;
     private $_name;
     private $_lastName;
     private $_password;
     private $_passwordRPT;
     private $_hashPassword;
-
 
     public function checkInputs()
     {
@@ -23,7 +20,6 @@ class registerClass
     }
     private function checkPassword()
     {
-
         $this->_wachtwoord = $_POST["_wachtwoord"];
         $this->_wachtwoordRPT = $_POST["_wachtwoordRPT"];
         if ($this->_wachtwoord !== $this->_wachtwoordRPT) {
@@ -31,16 +27,11 @@ class registerClass
             exit();
         }
     }
-
     public function createUser()
     {
-
         $db = new Database;
-
         if (isset($_POST["_register"])) {
-
             if (!empty($_POST["_email"]) && !empty($_POST["_name"]) && !empty($_POST["_wachtwoord"]) && !empty($_POST["_wachtwoordRPT"]) && !empty($_POST['_lastName'])) {
-
                 $this->_email = $_POST["_email"];
                 $this->_name = $_POST["_name"];
                 $this->_lastName = $_POST["_lastName"];
@@ -63,18 +54,33 @@ class registerClass
         }
     }
 }
-
-class LoginClass extends registerClass{
-
-    public function checkLogin(){
-
-        if(isset($_POST["_inloggen"])){
-            echo "1";
-        }else{
-            echo 0;
+class LoginClass extends registerClass
+{
+    public function checkLogin()
+    {
+        if (isset($_POST["_inloggen"])) {
+            if (!empty($_POST["_userEmail"]) && !empty($_POST["_userWW"])) {
+                $db = new Database;
+                $this->_email = $_POST["_userEmail"];
+                $this->_password = $_POST["_userWW"];
+                $this->_hashPassword = hash("sha256", $this->_password);
+                $selectUserQRY = $db->connection->prepare("SELECT `email`, `password` FROM `users` WHERE email = '$this->_email' AND password = '$this->_hashPassword' ");
+                if ($selectUserQRY === false) {
+                    echo mysqli_error($db->con);
+                }
+                if ($selectUserQRY->execute()) {
+                    $selectUserResult = $selectUserQRY->get_result();
+                    while ($results = $selectUserResult->fetch_assoc()) {
+                        $userInfo_array = [
+                            "userEmail" => $results["email"],
+                            "userWW" => $results["password"]
+                        ];
+                        return $userInfo_array;
+                    }
+                }
+            } else {
+                header("location: ../loginPages/login.php?error");
+            }
         }
-
     }
-
 }
-
