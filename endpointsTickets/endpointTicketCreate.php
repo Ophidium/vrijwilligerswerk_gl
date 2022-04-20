@@ -34,8 +34,8 @@ include '../functions/ticketsCRUD.php';
 
 
 if (isset($_POST['submit']) && $_POST['submit'] != '') {
-	$database = new Database();
-	$db = $database->getConnection();
+	// $database = new Database();
+	// $db = $database->getConnection();
 	// initialize object
 	$tickets = new crudtickets($db);
 	// read products will be here

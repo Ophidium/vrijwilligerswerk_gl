@@ -36,21 +36,21 @@ class crudtickets
 		}
 	}
 
-	// public function update($id, $title, $desc, $img, $category_id, $location, $active)
-	// {
-	// 	$query  = "UPDATE ". $this->tableName. " SET `Woord`='$woord', Goedgekeurd='$gekeurd', Gradatie='$grade' WHERE id='$id'";
-	// 	$result = $this->connection->query($query);
-	// 	if ($result) {
-	// 		echo 'Data updated in database.';
-	// 	}
-	// }
+	public function update($id, $title, $desc, $img, $category_id, $location, $active)
+	{
+		$query  = "UPDATE ". $this->tableName. " SET `title`='$title', `description`='$desc', `images`='$img', `category_id`='$category_id', `location`='$location', `active`='$active' WHERE id='$id'";
+		$result = $this->connection->query($query);
+		if ($result) {
+			echo 'Data updated in database.';
+		}
+	}
 
-	// public function delete($id)
-	// {
-	// 	$query = "DELETE FROM $this->tableName WHERE id='$id'";
-	// 	$result = $this->connection->query($query);
-	// 	if ($result) {
-	// 		echo 'Data deleted from database.';
-	// 	}
-	// }
+	public function delete($id)
+	{
+		$query = "DELETE FROM $this->tableName WHERE id='$id'";
+		$result = $this->connection->query($query);
+		if ($result) {
+			echo 'Data deleted from database.';
+		}
+	}
 }
