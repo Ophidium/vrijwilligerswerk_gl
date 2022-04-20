@@ -23,7 +23,7 @@ include '../functions/ticketsCRUD.php';
 		Desc:<br><input type="text" name="desc" id="" placeholder=""><br>
 		Category:<br><input type="text" name="category_id" id="" placeholder=""><br>
         locatie::<br><input type="text" name="location" id="" placeholder=""><br>
-        active:<br><input type="text" name="gradatie" id="" placeholder=""><br>
+        active:<br><input type="text" name="active" id="" placeholder=""><br>
 
         <input type="submit" name="submit" value="submit"><br>
 	</form>
@@ -48,12 +48,12 @@ if (isset($_POST['submit']) && $_POST['submit'] != '') {
 
 
     $id = 0;
-	$title = "Hulp bij boodschappen nodig gister";
-	$desc = "Ik heb nog meer hulp nodig om boodschappen te halen";
+	$title = $db->real_escape_string($_POST['title']);
+	$desc = $db->real_escape_string($_POST['desc']);
     $images = '';
-	$category_id = 3;
-	$location = 'testwijk2';
-    $active = 0;
+	$category_id = $db->real_escape_string($_POST['category_id']);
+	$location = $db->real_escape_string($_POST['location']);
+    $active = $db->real_escape_string($_POST['active']);
 
 	echo "$title is Toegevoegd";
 	echo "<br>";
