@@ -24,3 +24,6 @@ class Database
 		return $this->connection;
 	}
 }
+
+$database = new Database();
+$db = $database->getConnection();
