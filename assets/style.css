@@ -1,13 +1,15 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
+/* Navbar logo */
 #navbarLogo {
   margin-right: auto;
 }
 
+/* Navbar div */
 nav {
   display: flex;
   justify-content: flex-end;
@@ -15,9 +17,10 @@ nav {
   padding: 20px 50px;
 }
 
+/* Navbar link */
 nav a {
   text-decoration: none;
-  color: black;
+  color: #0066ff;
 }
 
 ul {
@@ -26,14 +29,15 @@ ul {
 
 li {
   list-style: none;
-  padding: 20px;
+  padding-left: 20px;
   display: inline-block;
 }
 
+/* Navbar animation underline hover */
 .navLink {
   font-weight: bold;
   text-decoration: none;
-  color: #000000;
+  color: #0066ff;
   padding: 14px 0px;
   display: inline-block;
   position: relative;
@@ -49,7 +53,7 @@ li {
   height: 2px;
   content: "";
   position: absolute;
-  background-color: #031d44;
+  background-color: #0066ff;
 }
 
 .navLinkUnder::before {
@@ -59,4 +63,68 @@ li {
 
 .navLinkUnder:hover::before {
   width: 100%;
+}
+
+/* Header */
+.headerContainer {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("header.jpg");
+}
+
+/* Searchbar */
+
+/* Contact page*/
+.contactContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: row;
+}
+
+input[type=text], input[type=email], textarea {
+    width: 200%;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+textarea {
+    width: 300%;
+    height: 200px;
+}
+
+/* Footer */
+.footerContainer {
+    margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.footerInformatie {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerInformatie a {
+  text-decoration: none;
+}
+
+/* Dit is tijdelijk */
+.white {
+  color: white;
+}
+
+
+/* About */
+.aboutContainer {
+    width: 50%;
+    margin: auto;
+    display: block;
 }

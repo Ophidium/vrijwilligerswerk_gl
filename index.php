@@ -1,9 +1,7 @@
 <?php
-
 // Including navbar
 include 'components/navbar.php';
-
-
+include 'components/header.php';
 ?>
 
 <!-- HTML gedeelte index -->
@@ -16,6 +14,13 @@ include 'components/navbar.php';
     <title>Vrijwilligershuis Nieuwegein</title>
 </head>
 <body>
-    
+    <div class="searchbarContainer">
+
+    </div>
 </body>
 </html>
+
+<?php
+// Including navbar
+include 'components/footer.php';
+?>
