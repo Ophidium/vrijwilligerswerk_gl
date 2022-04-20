@@ -66,7 +66,15 @@ class registerClass
 
 class LoginClass extends registerClass{
 
-    
+    public function checkLogin(){
+
+        if(isset($_POST["_inloggen"])){
+            echo "1";
+        }else{
+            echo 0;
+        }
+
+    }
 
 }
 
