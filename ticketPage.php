@@ -1,3 +1,3 @@
 <?php
 
-// pagina met ticket info
+// index van alle ticket paginas
