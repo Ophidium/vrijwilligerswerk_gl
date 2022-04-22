@@ -31,13 +31,13 @@ textarea {
 
 /* Navbar div */
 nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    /* padding: 20px 50px; */
-    height: 75px;
-    width: 100%;
-    background-color: red;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* padding: 20px 50px; */
+  height: 75px;
+  width: 100%;
+  background-color: red;
 }
 
 ul {
@@ -89,8 +89,7 @@ li {
   justify-content: center;
   align-items: center;
   height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../images/volunteerImg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/volunteerImg.jpg");
   background-position: center;
   background-size: cover;
   color: white;
