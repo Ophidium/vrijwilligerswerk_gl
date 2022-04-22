@@ -38,13 +38,10 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px 50px;
-}
-
-/* Navbar link */
-nav a {
-  text-decoration: none;
-  color: #0066ff;
+  /* padding: 20px 50px; */
+  height: 75px;
+  width: 100%;
+  background-color: red;
 }
 
 ul {
