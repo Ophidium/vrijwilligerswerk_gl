@@ -89,13 +89,9 @@ li {
   justify-content: center;
   align-items: center;
   height: 500px;
-<<<<<<< HEAD
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/volunteerImg.jpg");
-=======
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../images/volunteerImg.jpg");
->>>>>>> robinBranch
   background-position: center;
   background-size: cover;
   color: white;

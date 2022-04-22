@@ -1,8 +1,6 @@
-<<<<<<< HEAD:assets/components/navbar.php
 <?php
 define("BASEURL","http://localhost/programming/vrijwilligerswerk/");
 ?>
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +11,6 @@ define("BASEURL","http://localhost/programming/vrijwilligerswerk/");
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
->>>>>>> robinBranch:components/navbar.php
 <nav>
     <h1 class="navLink navLinkUnder" id="navbarLogo"><a href="../index.php">99</a></h1>
     <ul>
