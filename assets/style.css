@@ -1,12 +1,35 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 300%;
+  height: 200px;
+}
+
+/* Button */
+/* button {
+
+} */
+
+/* Navbar logo */
 #navbarLogo {
-    margin-right: auto;
+  margin-right: auto;
 }
 
+/* Navbar div */
 nav {
     display: flex;
     justify-content: flex-end;
@@ -18,11 +41,122 @@ nav {
 }
 
 ul {
-    display: flex;
+  display: flex;
 }
 
 li {
-    list-style: none;
-    padding: 20px;
-    display: inline-block;
+  list-style: none;
+  padding-left: 20px;
+  display: inline-block;
+}
+
+/* Navbar animation underline hover */
+.navLink {
+  font-weight: bold;
+  text-decoration: none;
+  color: #0066ff;
+  padding: 14px 0px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+.navLink:hover {
+  opacity: 1;
+}
+
+.navLink::before {
+  transition: 300ms;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: #0066ff;
+}
+
+.navLinkUnder::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.navLinkUnder:hover::before {
+  width: 100%;
+}
+
+/* Header */
+.headerContainer {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/volunteerImg.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+/* Searchbar */
+
+/* About */
+.aboutContainer {
+  width: 50%;
+  margin: auto;
+  display: block;
+}
+
+/* Contact page*/
+.contactContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Login page */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loginFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  box-shadow: 3px 5px 5px 5px #a8a8a8;
+  height: 500px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Footer */
+.footerContainer {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.footerInformatie {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerInformatie a {
+  text-decoration: none;
+  color: #0066ff;
+}
+
+/* Dit is tijdelijk */
+.white {
+  color: white;
 }
