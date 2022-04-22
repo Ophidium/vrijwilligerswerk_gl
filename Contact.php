@@ -20,7 +20,7 @@ include 'components/header.php';
         </div>
         <div class="contactDetails">
             <h3>Openingstijden</h3>
-            <p>Maandag t/m vrijdag van 09:00 – 17:00 uur</p>
+            <p>Maandag t/m vrijdag van 09:00 – 17:00 uur</p><br>
             <h3>Contactgegevens</h3>
             <p>Tel:<br>
             0653972685

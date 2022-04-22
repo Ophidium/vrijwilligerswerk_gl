@@ -202,8 +202,14 @@ li {
 /* Contact page */
 @media only screen and (max-width: 1000px) {
   .contactContainer {
+    width: 80%;
+    margin: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  .contactDetails {
+    margin-bottom: 50px;
   }
   
 }
@@ -228,5 +234,22 @@ li {
   }
   .loginContainer p {
     width: 80%;
+  }
+}
+
+/* Footer */
+@media only screen and (max-width: 1200px) {
+  .footerContainer {
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .footerContainer {
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
   }
 }
