@@ -5,7 +5,10 @@
 }
 
 /* Input fields */
-input[type=text], input[type=email], input[type=password], textarea {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -84,15 +87,16 @@ li {
 
 /* Header */
 .headerContainer {
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/volunteerImg.jpg");
-    background-position: center;
-    background-size: cover;
-    color: white;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/volunteerImg.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
 }
 
 /* Searchbar */
@@ -106,13 +110,13 @@ li {
 
 /* Contact page*/
 .contactContainer {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .contactForm {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 /* Login page */
@@ -138,8 +142,8 @@ li {
 
 /* Footer */
 .footerContainer {
-    margin-top: 100px;
-    margin-bottom: 50px;
+  margin-top: 100px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-around;
   align-items: baseline;
@@ -152,6 +156,7 @@ li {
 
 .footerInformatie a {
   text-decoration: none;
+  color: #0066ff;
 }
 
 /* Dit is tijdelijk */

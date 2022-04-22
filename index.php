@@ -1,6 +1,6 @@
 <?php
 // Page title
-$title = "Home";
+$title = 'Home';
 
 // Including navbar
 include 'components/navbar.php';
@@ -24,7 +24,6 @@ include 'components/header.php';
 </body>
 </html>
 
-<?php
-// Including navbar
+<?php // Including navbar
 include 'components/footer.php';
 ?>
