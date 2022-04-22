@@ -17,6 +17,9 @@ class registerClass
         if (isset($_GET["pswdFalse"])) {
             echo "wachtwoord niet hetzelfde";
         }
+        if(isset($_GET["incorrect"])){
+            echo "Incorrect";
+        }
     }
     private function checkPassword()
     {
@@ -54,6 +57,7 @@ class registerClass
         }
     }
 }
+
 class LoginClass extends registerClass
 {
     public function checkLogin()
@@ -70,12 +74,14 @@ class LoginClass extends registerClass
                 }
                 if ($selectUserQRY->execute()) {
                     $selectUserResult = $selectUserQRY->get_result();
-                    while ($results = $selectUserResult->fetch_assoc()) {
-                        $userInfo_array = [
-                            "userEmail" => $results["email"],
-                            "userWW" => $results["password"]
-                        ];
-                        return $userInfo_array;
+                    $checkInDataBase = mysqli_fetch_array($selectUserResult);
+                    if (is_array($checkInDataBase)) {
+                        $this->_email = $checkInDataBase['email'];
+                        $this->_hashPassword = $checkInDataBase['password'];
+                        echo 1;
+                    } else {
+                        echo 'fout';
+                        header("location: ../loginPages/login.php?incorrect");
                     }
                 }
             } else {
