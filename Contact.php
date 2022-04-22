@@ -1,7 +1,7 @@
 <?php
 // Including navbar
-include 'components/navbar.php';
-include 'components/header.php';
+include 'assets/components/navbar.php';
+include 'assets/components/header.php';
 ?>
     <div class="contactContainer">
         <div class="contactForm">
@@ -15,7 +15,7 @@ include 'components/header.php';
                 <label for="bericht">Bericht</label><br>
                 <textarea name="bericht"></textarea>
                 <br><br>
-                <input type="submit" value="Submit">
+                <input class="button" type="submit" value="Submit">
             </form>
         </div>
         <div class="contactDetails">
@@ -31,7 +31,6 @@ include 'components/header.php';
         </div>
     </div>
 
-<?php
-// Including navbar
-include 'components/footer.php';
+<?php // Including navbar
+include 'assets/components/footer.php';
 ?>
