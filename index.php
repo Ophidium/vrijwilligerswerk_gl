@@ -10,5 +10,5 @@ include 'components/header.php';
 </div>
 
 <?php // Including navbar
-include 'components/footer.php';
+include 'assets/components/footer.php';
 ?>

@@ -1,3 +1,6 @@
+<?php
+define("BASEURL","http://localhost/programming/vrijwilligerswerk/");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
