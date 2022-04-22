@@ -1,6 +1,19 @@
+<<<<<<< HEAD:assets/components/navbar.php
 <?php
 define("BASEURL","http://localhost/programming/vrijwilligerswerk/");
 ?>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrijwilligershuis Nieuwegein</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+>>>>>>> robinBranch:components/navbar.php
 <nav>
     <h1 class="navLink navLinkUnder" id="navbarLogo"><a href="../index.php">99</a></h1>
     <ul>

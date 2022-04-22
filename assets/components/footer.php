@@ -1,6 +1,6 @@
 <div class="footerContainer">
     <div class="footerContact">
-        <h3>Contact</h3>
+        <h3>Contact</h3><br>
         <p>Bezoekadres</p>
         <p>Stadsplein 1</p>
         <p>3431 LZ Nieuwegein</p>
@@ -16,7 +16,7 @@
         <p>10:00 – 16:00</p>
     </div>
     <div class="footerInformatie">
-        <h3>Informatie</h3>
+        <h3>Informatie</h3><br>
         <a href="">Blogs en vlogs</a>
         <a href="">Contact</a>
         <a href="">Over ons</a>
@@ -24,7 +24,7 @@
         <a href="">Op zoek naar een MaS stage?</a>
     </div>
     <div class="footerInformatie">
-        <h3 class="white">Informatie</h3>
+        <h3 class="white">Informatie</h3><br>
         <a href="">Vrijwilligers account aanmaken</a>
         <a href="">Organisatie account aanmaken</a>
         <a href="">veelgestelde-vragen</a>
@@ -32,3 +32,5 @@
         <a href="">Cookieverklaring</a>
      </div>
 </div>
+</body>
+</html>

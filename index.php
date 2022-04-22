@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- HTML gedeelte index -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +27,18 @@
 </body>
 
 </html>
+=======
+<?php
+// Including navbar
+include 'components/navbar.php';
+include 'components/header.php';
+?>
+
+<!-- HTML gedeelte index -->
+<div class="searchbarContainer">
+
+</div>
+>>>>>>> robinBranch
 
 <?php // Including navbar
 include 'assets/components/footer.php';
