@@ -5,11 +5,11 @@
 }
 
 /* Input fields */
-input[type="text"],
-input[type="email"],
+.contactForm input[type="text"],
+.contactForm input[type="email"],
 input[type="password"],
 textarea {
-  width: 100%;
+  width: 200%;
   padding: 12px;
   margin-bottom: 15px;
 }
@@ -92,6 +92,7 @@ li {
   justify-content: center;
   align-items: center;
   height: 500px;
+  width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../images/volunteerImg.jpg");
   background-position: center;
