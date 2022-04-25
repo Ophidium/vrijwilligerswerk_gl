@@ -1,17 +1,24 @@
 <?php
+// Page title
+$title = 'Home';
 
-include 'assets/components/navbar.php';
-<<<<<<< Updated upstream
-=======
 // Including navbar
 include 'assets/components/header.php';
 ?>
->>>>>>> Stashed changes
 
+<!-- HTML gedeelte index -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrijwilligershuis Nieuwegein</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="searchbarContainer">
 
-<<<<<<< Updated upstream
-?>
-=======
     </div>
 </body>
 </html>
@@ -19,4 +26,3 @@ include 'assets/components/header.php';
 <?php // Including navbar
 include 'assets/components/footer.php';
 ?>
->>>>>>> Stashed changes
