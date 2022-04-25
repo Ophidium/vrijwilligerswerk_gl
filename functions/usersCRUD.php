@@ -1,9 +1,9 @@
 <?php
 
-class crudusers
+class crudtickets
 {
 	private $connection;
-	private $tableName = "users";
+	private $tableName = "tickets";
 
 	public function __construct($db)
 	{
@@ -25,20 +25,20 @@ class crudusers
 	}
 
 	// product
-	public function create($firstName, $lastName, $email, $password)
+	public function create($user_id, $title, $desc, $img, $category_id, $location, $active)
 	{
         // $currentDate = new date();
-		$query = "INSERT INTO " .$this->tableName. " ( `firstName`, `lastName`, `email`, `password`) VALUES
-        ('$firstName', '$lastName', '$email',  '$password')";
+		$query = "INSERT INTO " .$this->tableName. " ( `user_id`, `title`, `description`, `date`, `images`, `category_id`, `location`, `active`) VALUES
+        ('$user_id', '$title', '$desc',  now(), '$img', '$category_id', '$location', '$active')";
 		$result = $this->connection->query($query);
 		if ($result) {
 			echo 'Data created in database.';
 		}
 	}
 
-	public function update($id, $firstName, $lastName, $email)
+	public function update($id, $title, $desc, $img, $category_id, $location, $active)
 	{
-		$query  = "UPDATE ". $this->tableName. " SET `firstName`='$firstName', `lastName`='$lastName', `email`='$email' WHERE id='$id'";
+		$query  = "UPDATE ". $this->tableName. " SET `title`='$title', `description`='$desc', `images`='$img', `category_id`='$category_id', `location`='$location', `active`='$active' WHERE id='$id'";
 		$result = $this->connection->query($query);
 		if ($result) {
 			echo 'Data updated in database.';
