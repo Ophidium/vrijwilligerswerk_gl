@@ -1,13 +1,21 @@
 <?php
 include '../database/connect.php';
-class registerClass
+class User
 {
-    private $_email;
-    private $_name;
-    private $_lastName;
-    private $_password;
-    private $_passwordRPT;
-    private $_hashPassword;
+    public $_email;
+    public $_name;
+    public $_lastName;
+    public $_password;
+    public $_passwordRPT;
+    public $_hashPassword;
+
+    public $_city;
+    public $_neighbourhood;
+    public $_houseNumber;
+    public $_zipcode;
+    public $_interest;
+    public $_birthDate;
+    public $_about;
 
     public function checkInputs()
     {
@@ -17,11 +25,11 @@ class registerClass
         if (isset($_GET["pswdFalse"])) {
             echo "wachtwoord niet hetzelfde";
         }
-        if(isset($_GET["incorrect"])){
+        if (isset($_GET["incorrect"])) {
             echo "Incorrect";
         }
     }
-    private function checkPassword()
+    public function checkPassword()
     {
         $this->_wachtwoord = $_POST["_wachtwoord"];
         $this->_wachtwoordRPT = $_POST["_wachtwoordRPT"];
@@ -30,6 +38,9 @@ class registerClass
             exit();
         }
     }
+}
+class CreateUser extends User
+{
     public function createUser()
     {
         $db = new Database;
@@ -57,8 +68,7 @@ class registerClass
         }
     }
 }
-
-class LoginClass extends registerClass
+class LoginUser extends User
 {
     public function checkLogin()
     {
@@ -78,7 +88,7 @@ class LoginClass extends registerClass
                     if (is_array($checkInDataBase)) {
                         $this->_email = $checkInDataBase['email'];
                         $this->_hashPassword = $checkInDataBase['password'];
-                        echo 1;
+                        // echo 1;
                     } else {
                         echo 'fout';
                         header("location: ../loginPages/login.php?incorrect");
@@ -87,6 +97,22 @@ class LoginClass extends registerClass
             } else {
                 header("location: ../loginPages/login.php?error");
             }
+        }
+    }
+}
+
+class UserInfo extends User
+{
+    public function addUserInfo()
+    {
+        if (isset($_POST["_voltooiSubmit"])) {
+            if (!empty($_POST["city"]) && !empty($_POST["_neighbourhood"]) && !empty($_POST["_houseNumber"]) && !empty($_POST["_zipcode"]) && !empty($_POST["_interest"]) && !empty($_POST["_birthDate"]) && !empty($_POST["_about"])) {
+                echo 1;
+            }else{
+                echo 0;
+            }
+        }else{
+            echo "er ging iets fout";
         }
     }
 }

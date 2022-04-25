@@ -1,7 +1,7 @@
 <?php
 // Including navbar
-include 'components/navbar.php';
-include 'components/header.php';
+include 'assets/components/navbar.php';
+include 'assets/components/header.php';
 ?>
 
 <!-- HTML gedeelte index -->

@@ -7,19 +7,19 @@ class crudtickets
 
 	public function __construct($db)
 	{
-       $this->connection = $db;
+		$this->connection = $db;
 	}
 
 	public function read($id)
 	{
-		$query = "SELECT * FROM " .$this->tableName . " WHERE id=$id";
+		$query = "SELECT * FROM " . $this->tableName . " WHERE id=$id";
 		$result = $this->connection->query($query);
 		return $result;
 	}
 
 	public function read_all()
 	{
-		$query = "SELECT * FROM " .$this->tableName;
+		$query = "SELECT * FROM " . $this->tableName;
 		$result = $this->connection->query($query);
 		return $result;
 	}
@@ -27,8 +27,8 @@ class crudtickets
 	// product
 	public function create($user_id, $title, $desc, $img, $category_id, $location, $active)
 	{
-        // $currentDate = new date();
-		$query = "INSERT INTO " .$this->tableName. " ( `user_id`, `title`, `description`, `date`, `images`, `category_id`, `location`, `active`) VALUES
+		// $currentDate = new date();
+		$query = "INSERT INTO " . $this->tableName . " ( `user_id`, `title`, `description`, `date`, `images`, `category_id`, `location`, `active`) VALUES
         ('$user_id', '$title', '$desc',  now(), '$img', '$category_id', '$location', '$active')";
 		$result = $this->connection->query($query);
 		if ($result) {
@@ -38,7 +38,7 @@ class crudtickets
 
 	public function update($id, $title, $desc, $img, $category_id, $location, $active)
 	{
-		$query  = "UPDATE ". $this->tableName. " SET `title`='$title', `description`='$desc', `images`='$img', `category_id`='$category_id', `location`='$location', `active`='$active' WHERE id='$id'";
+		$query  = "UPDATE " . $this->tableName . " SET `title`='$title', `description`='$desc', `images`='$img', `category_id`='$category_id', `location`='$location', `active`='$active' WHERE id='$id'";
 		$result = $this->connection->query($query);
 		if ($result) {
 			echo 'Data updated in database.';

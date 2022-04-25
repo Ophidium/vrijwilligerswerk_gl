@@ -1,7 +1,7 @@
 <?php
 // Including navbar
-include 'components/navbar.php'; 
-include 'components/header.php';
+include 'assets/components/navbar.php'; 
+include 'assets/components/header.php';
 ?>
 
 <div class="aboutContainer">
@@ -18,5 +18,5 @@ include 'components/header.php';
 
 <?php // Including footer
 // Including footer
-include 'components/footer.php';
+include 'assets/components/footer.php';
 ?>
