@@ -17,13 +17,20 @@ if (isset($_POST["_register"]) || isset($_POST["_inloggen"]) || isset($_POST["_v
         $userInfoFunction = $userInfoClass->addUserInfo();
         // echo 'vanuit addProfileInfo.php';
     }
+    $userClass = new User();
+    $getUserInfoFunction = $userClass->getUserInfo();
+
 } else {
     header("location: ../?error=fout220");
 }
-
-include '../assets/components/navbar.php'
+include '../assets/components/navbar.php';
 ?>
+<a href="addProfileInfo.php?userID=<?php echo $getUserInfoFunction["id"] ?>">account voltooien</a>
+
+<?php 
+
+echo '<pre>';
+var_dump($getUserInfoFunction);
 
 
-
-<a href="addProfileInfo.php">account voltooien</a>
+?>

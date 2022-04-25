@@ -9,6 +9,7 @@ class User
     public $_passwordRPT;
     public $_hashPassword;
 
+    public $_userID;
     public $_city;
     public $_neighbourhood;
     public $_houseNumber;
@@ -36,6 +37,48 @@ class User
         if ($this->_wachtwoord !== $this->_wachtwoordRPT) {
             header("location: ../loginPages/registreren.php?pswdFalse");
             exit();
+        }
+    }
+
+
+    public function getUserInfo()
+    {
+        $db = new Database;
+        if (isset($_POST["_register"]) && !empty($_POST["_email"])) {
+            $this->_email = $_POST["_email"];
+            // $getUserAccount = $db->connection->prepare("SELECT `id`, `firstName`, `lastName`, `email`, `password`, `creation_date` FROM `users` WHERE email = '$this->_email'");
+            // echo 1;
+        }
+        if (isset($_POST["_inloggen"]) && !empty($_POST["_userEmail"])) {
+            $this->_email = $_POST["_userEmail"];
+            // $getUserAccount = $db->connection->prepare("SELECT `id`, `firstName`, `lastName`, `email`, `password`, `creation_date` FROM `users` WHERE email = '$this->_email'");
+            // echo 2;
+        }
+
+        $getUserAccount = $db->connection->prepare("SELECT `id`, `firstName`, `lastName`, `email`, `password`, `creation_date` FROM `users` WHERE email = '$this->_email'");
+        // if(isset($_GET["userID"])){
+
+        //    $this->userID = $_GET["userID"];
+        //    $getUserAccount = $db->connection->prepare("SELECT id FROM `users` WHERE email = '$this->_email'");
+        // }
+
+        if ($getUserAccount === false) {
+            echo mysqli_error($db->con);
+        }
+        if ($getUserAccount->execute()) {
+            $getUserID = $getUserAccount->get_result();
+
+            while ($resultsQRY = $getUserID->fetch_assoc()) {
+                $userInfoArray = [
+                    "id" => $resultsQRY["id"],
+                    "firstName" => $resultsQRY["firstName"],
+                    "lastName" => $resultsQRY["lastName"],
+                    "email" => $resultsQRY["email"],
+                    "password" => $resultsQRY["password"],
+                    "creation_date" => $resultsQRY["creation_date"]
+                ];
+                return $userInfoArray;
+            }
         }
     }
 }
@@ -100,19 +143,43 @@ class LoginUser extends User
         }
     }
 }
-
 class UserInfo extends User
 {
     public function addUserInfo()
     {
         if (isset($_POST["_voltooiSubmit"])) {
-            if (!empty($_POST["city"]) && !empty($_POST["_neighbourhood"]) && !empty($_POST["_houseNumber"]) && !empty($_POST["_zipcode"]) && !empty($_POST["_interest"]) && !empty($_POST["_birthDate"]) && !empty($_POST["_about"])) {
-                echo 1;
-            }else{
-                echo 0;
+            if (isset($_GET["userID"]) && !empty($_POST["_city"]) && !empty($_POST["_neighbourhood"]) && !empty($_POST["_houseNumber"]) && !empty($_POST["_zipcode"]) && !empty($_POST["_interest"]) && !empty($_POST["_birthDate"]) && !empty($_POST["_about"])) {
+
+                $db = new Database;
+                $this->_userID = $_GET["userID"];
+                $this->_city = $_POST["_city"];
+                $this->_neighbourhood = $_POST["_neighbourhood"];
+                $this->_houseNumber = $_POST["_houseNumber"];
+                $this->_zipcode = $_POST["_zipcode"];
+                $this->_interest = $_POST["_interest"];
+                $this->_birthDate = $_POST["_birthDate"];
+                $this->_about = $_POST["_about"];
+
+
+                $addUserInfoQRY = $db->connection->prepare("INSERT INTO `userinfo`(`userID`, `stad`, `wijk`, `huisnummer`, `postcode`, `interesse`, `geboortedatum`, `about`) VALUES ('$this->_userID','$this->_city','$this->_neighbourhood','$this->_houseNumber','$this->_zipcode',' $this->_interest','$this->_birthDate','$this->_about')");
+
+                if ($addUserInfoQRY === false) {
+                    echo mysqli_error($db->connection);
+                }
+                if ($addUserInfoQRY->execute()) {
+                    echo "account voltooid";
+                } else {
+                    echo "account niet voltooid(error)";
+                }
+            } else {
+                echo "account niet voltooid";
             }
-        }else{
+        } else {
             echo "er ging iets fout";
         }
+    }
+
+    public function checkUserInfo()
+    {
     }
 }
