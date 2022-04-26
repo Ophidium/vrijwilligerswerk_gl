@@ -52,7 +52,7 @@ class User
         }
         $getUserAccount = $db->connection->prepare("SELECT `id`, `firstName`, `lastName`, `email`, `password`, `creation_date` FROM `users` WHERE email = '$this->_email'");
         if ($getUserAccount === false) {
-            echo mysqli_error($db->con);
+            echo mysqli_error($db->connection);
         }
         if ($getUserAccount->execute()) {
             $getUserID = $getUserAccount->get_result();
@@ -112,7 +112,7 @@ class LoginUser extends User
                 $this->_hashPassword = hash("sha256", $this->_password);
                 $selectUserQRY = $db->connection->prepare("SELECT `email`, `password` FROM `users` WHERE email = '$this->_email' AND password = '$this->_hashPassword' ");
                 if ($selectUserQRY === false) {
-                    echo mysqli_error($db->con);
+                    echo mysqli_error($db->connection);
                 }
                 if ($selectUserQRY->execute()) {
                     $selectUserResult = $selectUserQRY->get_result();
