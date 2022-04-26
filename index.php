@@ -1,13 +1,27 @@
 <?php
+// Page title
+$title = 'Home';
+
 // Including navbar
-include 'assets/components/navbar.php';
 include 'assets/components/header.php';
 ?>
 
 <!-- HTML gedeelte index -->
-<div class="searchbarContainer">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrijwilligershuis Nieuwegein</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="searchbarContainer">
 
-</div>
+    </div>
+</body>
+</html>
 
 <?php // Including navbar
 include 'assets/components/footer.php';
