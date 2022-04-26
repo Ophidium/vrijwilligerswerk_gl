@@ -1,16 +1,46 @@
 <?php
-// Page title
-$title = 'Home';
 
-// Including navbar
-include 'assets/components/navbar.php';
-include 'assets/components/header.php';?>
+// include '../database/connect.php';
 
-<!-- HTML gedeelte index -->
-<div class="searchBarContainer">
-<div class="searchBarFormContainer">
-    <input type="text" name="searchBar" placeholder="Zoeken naar vacatures, evenmenten, organisaties etc"><br>
-    <input class="button" type="submit" value="Zoeken">
+include '../assets/components/navbar.php';
+
+include '../functions/loginFunction.php';
+
+
+// if (isset($_POST["_register"]) || isset($_POST["_inloggen"])) {
+//     if (isset($_POST["_register"])) {
+//         // echo "registreren";
+//         $createUserClass = new registerClass();
+//         $createUserFunction = $createUserClass->createUser();
+//     }
+
+//     if (isset($_POST["_inloggen"])) {
+//         // echo "login";
+//         $loginClass = new LoginClass();
+//         $loginFunction = $loginClass->checkLogin();
+//         // echo $loginFunction["userEmail"];
+//     }
+// } else {
+//     header("location: ../?error=fout220");
+// }
+
+
+// echo "<br>";
+// echo "logged in index.php";
+
+?>
+
+<!-- Stats -->
+<div class="statsBarContainer">
+<div style="flex-grow: 4" class="statsContainer">
+    <h3>Account</h3>
+    <p>Naam: Robin</p>
+    <p>Email: hoppa@hoppa.com</p>
+</div>
+<div style="flex-grow: 8" class="statsContainer">
+    <h3>Stats</h3>
+    <p>Open tickets: 2</p>
+    <p>Totaal aantal tickets: 24</p>
 </div>
 </div>
 
@@ -86,6 +116,6 @@ include 'assets/components/header.php';?>
     </div>
 </div>
 
-<?php // Including navbar
-include 'assets/components/footer.php';
+<?php
+include '../assets/components/footer.php';
 ?>

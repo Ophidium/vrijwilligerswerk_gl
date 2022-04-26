@@ -15,12 +15,12 @@ include 'assets/components/header.php';
                 <label for="bericht">Bericht</label><br>
                 <textarea name="bericht"></textarea>
                 <br><br>
-                <input type="submit" value="Submit">
+                <input class="button" type="submit" value="Submit">
             </form>
         </div>
         <div class="contactDetails">
             <h3>Openingstijden</h3>
-            <p>Maandag t/m vrijdag van 09:00 – 17:00 uur</p>
+            <p>Maandag t/m vrijdag van 09:00 – 17:00 uur</p><br>
             <h3>Contactgegevens</h3>
             <p>Tel:<br>
             0653972685
@@ -31,7 +31,6 @@ include 'assets/components/header.php';
         </div>
     </div>
 
-<?php
-// Including navbar
+<?php // Including navbar
 include 'assets/components/footer.php';
 ?>
