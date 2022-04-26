@@ -33,14 +33,18 @@ include '../functions/loginFunction.php';
 <!-- Stats -->
 <div class="statsBarContainer">
 <div style="flex-grow: 4" class="statsContainer">
-    <h3>Account</h3>
-    <p>Naam: Robin</p>
-    <p>Email: hoppa@hoppa.com</p>
+    <div class="statsContent">
+        <h3>Account</h3>
+        <p>Naam: Robin</p>
+        <p>Email: hoppa@hoppa.com</p>
+    </div>
 </div>
 <div style="flex-grow: 8" class="statsContainer">
-    <h3>Stats</h3>
-    <p>Open tickets: 2</p>
-    <p>Totaal aantal tickets: 24</p>
+    <div class="statsContent">
+        <h3>Stats</h3>
+        <p>Open tickets: 2</p>
+        <p>Totaal aantal tickets: 24</p>
+    </div>
 </div>
 </div>
 
