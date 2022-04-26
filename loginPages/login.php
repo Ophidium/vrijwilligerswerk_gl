@@ -1,8 +1,8 @@
+
 <?php
 include '../assets/components/navbar.php';
-include '../functions/loginFunction.php';
-
-$createUserClass = new registerClass();
+include '../functions/UserClass.php';
+$createUserClass = new User();
 $checkInputsFunction = $createUserClass->checkInputs();
 ?>
 
