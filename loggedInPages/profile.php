@@ -25,7 +25,7 @@ if (isset($_POST["_register"]) || isset($_POST["_inloggen"]) || isset($_POST["_v
 }
 include '../assets/components/navbar.php';
 ?>
-<a href="addProfileInfo.php?userID=<?php echo $getUserInfoFunction["id"] ?>">account voltooien</a>
+<a href="addProfileInfo.php?email=<?php echo $getUserInfoFunction["email"] ?>&&userID=<?php echo $getUserInfoFunction["id"] ?>">account voltooien</a>
 
 <?php 
 

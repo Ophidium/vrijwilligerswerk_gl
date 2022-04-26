@@ -46,22 +46,11 @@ class User
         $db = new Database;
         if (isset($_POST["_register"]) && !empty($_POST["_email"])) {
             $this->_email = $_POST["_email"];
-            // $getUserAccount = $db->connection->prepare("SELECT `id`, `firstName`, `lastName`, `email`, `password`, `creation_date` FROM `users` WHERE email = '$this->_email'");
-            // echo 1;
         }
-        if (isset($_POST["_inloggen"]) && !empty($_POST["_userEmail"])) {
+        if (isset($_POST["_voltooiSubmit"]) || isset($_POST["_inloggen"]) && !empty($_POST["_userEmail"])) {
             $this->_email = $_POST["_userEmail"];
-            // $getUserAccount = $db->connection->prepare("SELECT `id`, `firstName`, `lastName`, `email`, `password`, `creation_date` FROM `users` WHERE email = '$this->_email'");
-            // echo 2;
         }
-
         $getUserAccount = $db->connection->prepare("SELECT `id`, `firstName`, `lastName`, `email`, `password`, `creation_date` FROM `users` WHERE email = '$this->_email'");
-        // if(isset($_GET["userID"])){
-
-        //    $this->userID = $_GET["userID"];
-        //    $getUserAccount = $db->connection->prepare("SELECT id FROM `users` WHERE email = '$this->_email'");
-        // }
-
         if ($getUserAccount === false) {
             echo mysqli_error($db->con);
         }
