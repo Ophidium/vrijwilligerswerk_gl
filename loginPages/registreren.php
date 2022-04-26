@@ -1,5 +1,5 @@
 <?php
-
+include '../database/connect.php';
 include '../functions/UserClass.php';
 include '../assets/components/navbar.php';
 

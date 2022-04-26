@@ -1,5 +1,5 @@
-
 <?php
+include '../database/connect.php';
 include '../assets/components/navbar.php';
 include '../functions/UserClass.php';
 $createUserClass = new User();

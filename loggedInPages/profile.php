@@ -1,6 +1,7 @@
 <?php
-// include '../database/connect.php';
+include '../database/connect.php';
 include '../functions/UserClass.php';
+
 if (isset($_POST["_register"]) || isset($_POST["_inloggen"]) || isset($_POST["_voltooiSubmit"])) {
     if (isset($_POST["_register"])) {
         $createUserClass = new CreateUser();
@@ -49,74 +50,29 @@ include '../assets/components/navbar.php';
 
 <!-- Tickets -->
 <div class="ticketContainer">
+    <?php
+        include '../functions/ticketsCRUD.php';
+        // $db = new Database;
+        $tickets = new crudtickets($db); 
+        $result = $tickets->read_all(); 
+        while($data = mysqli_fetch_array($result)) 
+            { 
+    ?>
     <div class="ticket">
         <div class="ticketTitle">
-            <h3>Ticket 1</h3>
+            <h3><?php echo $data['title']; ?></h3>
         </div>
         <div class="ticketImg">
             <img src="../assets/images/volunteerimg.jpg" width='150px' alt="">
         </div>
-        <div class="ticketDesc">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, voluptatem quam aut ut inventore nam veritatis assumenda nulla nesciunt nihil nemo tempora, placeat rerum sequi at. Ut aspernatur quis nemo.</p>
-        </div>
-    </div>
-    <div class="ticket">
-        <div class="ticketTitle">
-            <h3>Ticket 1</h3>
-        </div>
-        <div class="ticketImg">
-            <img src="../assets/images/volunteerimg.jpg" width='150px' alt="">
+        <div class="category">
+            <p><?php echo $data['category_id']; ?></p>
         </div>
         <div class="ticketDesc">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, voluptatem quam aut ut inventore nam veritatis assumenda nulla nesciunt nihil nemo tempora, placeat rerum sequi at. Ut aspernatur quis nemo.</p>
+            <p><?php echo $data['description']; ?></p>
         </div>
     </div>
-    <div class="ticket">
-        <div class="ticketTitle">
-            <h3>Ticket 1</h3>
-        </div>
-        <div class="ticketImg">
-            <img src="../assets/images/volunteerimg.jpg" width='150px' alt="">
-        </div>
-        <div class="ticketDesc">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, voluptatem quam aut ut inventore nam veritatis assumenda nulla nesciunt nihil nemo tempora, placeat rerum sequi at. Ut aspernatur quis nemo.</p>
-        </div>
-    </div>
-</div>
-<div class="ticketContainer">
-    <div class="ticket">
-        <div class="ticketTitle">
-            <h3>Ticket 1</h3>
-        </div>
-        <div class="ticketImg">
-            <img src="../assets/images/volunteerimg.jpg" width='150px' alt="">
-        </div>
-        <div class="ticketDesc">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, voluptatem quam aut ut inventore nam veritatis assumenda nulla nesciunt nihil nemo tempora, placeat rerum sequi at. Ut aspernatur quis nemo.</p>
-        </div>
-    </div>
-    <div class="ticket">
-        <div class="ticketTitle">
-            <h3>Ticket 1</h3>
-        </div>
-        <div class="ticketImg">
-            <img src="../assets/images/volunteerimg.jpg" width='150px' alt="">
-        </div>
-        <div class="ticketDesc">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, voluptatem quam aut ut inventore nam veritatis assumenda nulla nesciunt nihil nemo tempora, placeat rerum sequi at. Ut aspernatur quis nemo.</p>
-        </div>
-    </div>
-    <div class="ticket">
-        <div class="ticketTitle">
-            <h3>Ticket 1</h3>
-        </div>
-        <div class="ticketImg">
-            <img src="../assets/images/volunteerimg.jpg" width='150px' alt="">
-        </div>
-        <div class="ticketDesc">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, voluptatem quam aut ut inventore nam veritatis assumenda nulla nesciunt nihil nemo tempora, placeat rerum sequi at. Ut aspernatur quis nemo.</p>
-        </div>
-    </div>
+    <?php } ?>
 </div>
 
 <?php
