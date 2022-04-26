@@ -4,8 +4,8 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#hamburgerMenu{
-  height:75px ;
+#hamburgerMenu {
+  height: 75px;
   width: 75px;
   background-color: red;
   display: none;
@@ -33,16 +33,16 @@ textarea:focus {
 
 /* Button */
 .button {
-    background-color: white;
-    border: 2px solid #0066ff;
-    color: #0066ff;
-    padding: 8px 18px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+  background-color: white;
+  border: 2px solid #0066ff;
+  color: #0066ff;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -151,7 +151,7 @@ li {
   background-color: rgba(255, 0, 0, 0.5);
 }
 
-.searchBarFormContainer input[type=text] {
+.searchBarFormContainer input[type="text"] {
   width: 80%;
   padding: 12px 20px;
 }
@@ -159,11 +159,9 @@ li {
 /* Tickets */
 .ticketContainer {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   width: 80%;
   margin: auto;
-  height: 400px;
-
 }
 
 .ticket {
@@ -173,10 +171,10 @@ li {
   flex-direction: column;
   margin: auto;
   width: 30%;
-  height: 300px;
+  height: 500px;
   box-shadow: 3px 5px 5px 5px #a8a8a8;
   border-radius: 20px;
-  /* margin: ; */
+  margin: 20px;
 }
 
 .ticketTitle {
@@ -290,9 +288,10 @@ li {
 /* loggedin index */
 .statsBarContainer {
   display: flex;
-  justify-content: space-evenly;
-  height: 50vh;
-  width: 80%;
+  /* justify-content: space-evenly; */
+  /* height: 50vh; */
+  flex-wrap: wrap;
+  width: 75%;
   margin: auto;
 }
 
@@ -302,7 +301,7 @@ li {
   align-items: center;
   flex-direction: column;
   flex: 1 2;
-  width: 80%;
+  /* width: 80%; */
   box-shadow: 3px 5px 5px 5px #a8a8a8;
   height: 400px;
   border-radius: 20px;
@@ -367,6 +366,50 @@ li {
   .loginFormContainer {
     width: 50%;
   }
+
+  .ticketContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+  }
+
+  .ticket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    height: 500px;
+    margin: 20px;
+  }
+
+  /* Profile stats */
+  .statsBarContainer {
+    display: flex;
+    /* margin: auto; */
+    /* justify-content: space-evenly; */
+    /* height: 50vh; */
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+    width: 75%;
+    margin: auto;
+  }
+
+  .statsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    /* flex: 1 2; */
+    /* width: 80%; */
+    box-shadow: 3px 5px 5px 5px #a8a8a8;
+    height: 400px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -426,14 +469,11 @@ li {
     margin-top: 100px;
   }
 
-  
-ul{
-  display: none;
-}
+  ul {
+    display: none;
+  }
 
-#hamburgerMenu{
-  display: block;
-}
-
-
+  #hamburgerMenu {
+    display: block;
+  }
 }
