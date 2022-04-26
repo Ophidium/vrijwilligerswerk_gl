@@ -24,6 +24,13 @@ class crudtickets
 		return $result;
 	}
 
+	public function read_active()
+	{
+		$query = "SELECT * FROM " . $this->tableName . " WHERE `active`='1'";
+		$result = $this->connection->query($query);
+		return $result;
+	}
+
 	// product
 	public function create($user_id, $title, $desc, $img, $category_id, $location, $active)
 	{

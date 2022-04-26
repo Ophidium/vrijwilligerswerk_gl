@@ -54,7 +54,7 @@ include '../assets/components/navbar.php';
         include '../functions/ticketsCRUD.php';
         // $db = new Database;
         $tickets = new crudtickets($db); 
-        $result = $tickets->read_all(); 
+        $result = $tickets->read_active(); 
         while($data = mysqli_fetch_array($result)) 
             { 
     ?>
