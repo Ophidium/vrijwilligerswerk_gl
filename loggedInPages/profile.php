@@ -72,7 +72,7 @@ include '../assets/components/navbar.php';
             <p><?php echo $data['description']; ?></p>
         </div>
         <div class="read">
-            <a href="#">read</a>
+            <a href="../ticketPages/ticketDetail.php?id=<?php echo $data['id']; ?>">read</a>
         </div>
         <div class="edit">
             <a href="#">Edit</a>

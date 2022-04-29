@@ -12,7 +12,7 @@ class crudtickets
 
 	public function read($id)
 	{
-		$query = "SELECT * FROM " . $this->tableName . " WHERE id=$id";
+		$query = "SELECT * FROM " . $this->tableName . " WHERE `id`='$id'";
 		$result = $this->connection->query($query);
 		return $result;
 	}
