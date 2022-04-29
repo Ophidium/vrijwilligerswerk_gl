@@ -1,5 +1,5 @@
 <?php
-define("BASEURL", "http://localhost/programming/vrijwilligerswerk/");
+define("BASEURL", "http://localhost/vrijwilligers/vrijwilligerswerk/");
 ?>
 <!DOCTYPE html>
 <html lang="en">

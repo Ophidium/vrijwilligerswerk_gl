@@ -71,6 +71,10 @@ include '../assets/components/navbar.php';
         <div class="ticketDesc">
             <p><?php echo $data['description']; ?></p>
         </div>
+        <div class="edit">
+            <a href="#">Edit</a>
+
+        </div>
     </div>
     <?php } ?>
 </div>
