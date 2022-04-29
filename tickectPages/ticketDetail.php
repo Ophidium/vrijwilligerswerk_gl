@@ -6,6 +6,10 @@ include '../assets/components/navbar.php';
 ?>
 
 
+<div class="ticketDetailContainer">
+    <h2>Ticket Title</h2>
+    <img src="../assets/images/volunteerimg.jpg" alt="">
+</div>
 
 
 <?php
