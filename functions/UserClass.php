@@ -172,3 +172,56 @@ class UserInfo extends User
     {
     }
 }
+
+class UserCrud extends User
+{
+    public function userRead()
+    {
+        if (isset($_GET["userID"])) {
+            $userID = $_GET["userID"];
+            $db = new Database;
+            $readUser = $db->connection->prepare("SELECT `id`, `firstName`, `lastName`, `email`, `password`, `creation_date` FROM `users` WHERE id = '$userID'");
+            if ($readUser === false) {
+                echo mysqli_error($db->con);
+            }
+            if ($readUser->execute()) {
+                $getUserID = $readUser->get_result();
+                while ($resultsQRY = $getUserID->fetch_assoc()) {
+                    $userReadArray = [
+                        "id" => $resultsQRY["id"],
+                        "firstName" => $resultsQRY["firstName"],
+                        "lastName" => $resultsQRY["lastName"],
+                        "email" => $resultsQRY["email"],
+                        "password" => $resultsQRY["password"],
+                        "creation_date" => $resultsQRY["creation_date"]
+                    ];
+                    return $userReadArray;
+                }
+            }
+        } else {
+            echo 0;
+        }
+    }
+
+    public function userUpdate()
+    {
+        $db = new Database;
+        if (isset($_POST["_updateUser"])) {
+            $this->_email = $_POST["_updateEmail"];
+            $this->_name = $_POST["_updateFirstName"];
+            $this->_lastName = $_POST["_updateLastName"];
+            
+            $this->_hashPassword = $_POST["_updateCheckPswd"];
+            $this->_password = $_POST["_updatePswd"];
+            echo 1;
+
+            // $addUserQRY = $db->connection->prepare("");
+            // if ($addUserQRY === false) {
+            //     echo mysqli_error($db->connection);
+            // }
+            // if ($addUserQRY->execute()) {
+            //     echo "account aangemaakt";
+            // }
+        }
+    }
+}
