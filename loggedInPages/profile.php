@@ -2,7 +2,7 @@
 include '../database/connect.php';
 include '../functions/UserClass.php';
 
-if (isset($_POST["_register"]) || isset($_POST["_inloggen"]) || isset($_POST["_voltooiSubmit"])) {
+if (isset($_POST["_register"]) || isset($_POST["_inloggen"]) || isset($_POST["_voltooiSubmit"]) || isset($_POST["_updateUser"])) {
     if (isset($_POST["_register"])) {
         $createUserClass = new CreateUser();
         $createUserFunction = $createUserClass->createUser();
@@ -18,6 +18,11 @@ if (isset($_POST["_register"]) || isset($_POST["_inloggen"]) || isset($_POST["_v
         $userInfoFunction = $userInfoClass->addUserInfo();
         // echo 'vanuit addProfileInfo.php';
     }
+    if (isset($_POST["_updateUser"])) {
+       $userCrudClass = new UserCrud();
+       $userUpdateFunction = $userCrudClass->userUpdate();
+        // echo 'vanuit userCRUD.php';
+    }
     $userClass = new User();
     $getUserInfoFunction = $userClass->getUserInfo();
 } else {
@@ -26,18 +31,13 @@ if (isset($_POST["_register"]) || isset($_POST["_inloggen"]) || isset($_POST["_v
 include '../assets/components/navbar.php';
 ?>
 <a href="addProfileInfo.php?email=<?php echo $getUserInfoFunction["email"] ?>&&userID=<?php echo $getUserInfoFunction["id"] ?>">account voltooien</a>
-
-
-
-
 <!-- Stats -->
 <div class="statsBarContainer">
     <div style="flex-grow: 4" class="statsContainer">
-        <div class="statsContent">
-            <h3>Account</h3>
-            <p>Naam: Robin</p>
-            <p>Email: hoppa@hoppa.com</p>
-        </div>
+        <h3>Account</h3>
+        <p>Naam: <?php echo $getUserInfoFunction["firstName"] ?></p>
+        <p>Email: <?php echo $getUserInfoFunction["email"] ?></p>
+        <a href="userCRUD.php?userID=<?php echo $getUserInfoFunction["id"] ?>">Bewerk</a>
     </div>
     <div style="flex-grow: 8" class="statsContainer">
         <div class="statsContent">
@@ -47,7 +47,6 @@ include '../assets/components/navbar.php';
         </div>
     </div>
 </div>
-
 <!-- Tickets -->
 <div class="ticketContainer">
     <?php
